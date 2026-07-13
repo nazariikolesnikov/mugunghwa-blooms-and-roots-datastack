@@ -1,0 +1,17 @@
+# Data Generator
+pyyaml
+psycopg2-binary
+faker
+
+# Change Data Capture (CDC)
+python-dotenv
+requests
+
+# Consumer
+kafka-python
+boto3
+fastparquet
+pandas
+
+# Transformations, star schema, and SCD2 (dbt)
+dbt-snowflake

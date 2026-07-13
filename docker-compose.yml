@@ -14,8 +14,8 @@ services:
     depends_on:
       - zookeeper
     ports:
-      - "9092:9092"   # internal Docker network
-      - "29092:29092" # host machine access
+      - "9092:9092"
+      - "29092:29092"
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
@@ -59,8 +59,8 @@ services:
       - ./docker/postgres/data:/var/lib/postgresql/data
     command: >
       postgres -c wal_level=logical
-              -c max_wal_senders=10
-              -c max_replication_slots=10
+        -c max_wal_senders=10
+        -c max_replication_slots=10
                
   minio:
     image: minio/minio:latest
@@ -90,8 +90,8 @@ services:
       - ./docker/dags:/opt/airflow/dags
       - ./docker/logs:/opt/airflow/logs
       - ./docker/plugins:/opt/airflow/plugins
-      - ./banking_dbt:/opt/airflow/banking_dbt
-      - ./banking_dbt/.dbt:/home/airflow/.dbt
+      - ./online_shop_dbt:/opt/airflow/online_shop_dbt
+      - ./online_shop_dbt/.dbt:/home/airflow/.dbt
     ports:
       - "8080:8080"
     command: webserver
@@ -111,11 +111,9 @@ services:
       - ./docker/dags:/opt/airflow/dags
       - ./docker/logs:/opt/airflow/logs
       - ./docker/plugins:/opt/airflow/plugins
-      - ./banking_dbt:/opt/airflow/banking_dbt
-      - ./banking_dbt/.dbt:/home/airflow/.dbt
+      - ./online_shop_dbt:/opt/airflow/banking_dbt
+      - ./online_shop_dbt/.dbt:/home/airflow/.dbt
     command: scheduler
-
-
 
   airflow-postgres:
     image: postgres:15
@@ -128,11 +126,11 @@ services:
     volumes:
       - airflow_postgres_data:/var/lib/postgresql/data
     ports:
-      - "5433:5432"  # separate from banking-postgres to avoid conflict
+      - "5433:5432"
 
 volumes:
   airflow_postgres_data:
   postgres_data:
 networks:
   default:
-    name: banking-mds-net
+    name: online-shop-mds-net
