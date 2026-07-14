@@ -19,7 +19,7 @@
 ```text
 magunghwa-blooms-and-roots-datastack/
 ├── .github/workflows/             # CI/CD pipelines (ci.yml, cd.yml)
-├── online_shop_dbt/                # DBT project
+├── online_shop_dbt/               # DBT project
 │   ├── models/
 │   │   ├── staging/               # Staging models
 │   │   ├── marts/                 # Facts & dimensions
