@@ -39,8 +39,8 @@ magunghwa-blooms-and-roots-datastack/
 │   └── dbt_project.yml
 ├── consumer
 │   └── kafka_to_minio.py
-├── data-generator/                # Faker-based data simulator
-│   └── faker_generator.py
+├── data-generator/                # Demo-based data simulator
+│   └── data_generator.py
 ├── docker/                        # Airflow DAGs, plugins
 │   ├── dags/                      # DAGs (minio_to_snowflake, scd_snapshots)
 ├── kafka-debezium/                # Kafka connectors & CDC logic
