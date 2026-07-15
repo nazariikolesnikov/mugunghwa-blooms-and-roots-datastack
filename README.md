@@ -1,6 +1,15 @@
-# Online-Shop "Mugunghwa Blooms & Roots" Data Stack
+# 🛍️ Online-Shop "Mugunghwa Blooms & Roots" Data Stack
 
-## Description
+## 📜 Description
+
+- Designed an OLTP system using PostgreSQL for online store scenarios;
+- Implemented Change Data Capture (CDC) using Kafka and Debezium;
+- Created a data lake for storing raw data;
+- Transformed data, built a star schema, and performed SCD2 operations using dbt;
+- Built a data warehouse in Snowflake;
+- Automated CI/CD processes using GitHub Actions;
+- Created corporate BI dashboards in Power BI;
+- Applied DevOps practices to data engineering;
 
 ## Technologies
 ![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-017CEE?style=for-the-badge&logo=Apache%20Airflow&logoColor=white)
